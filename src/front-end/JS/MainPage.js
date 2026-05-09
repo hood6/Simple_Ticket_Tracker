@@ -1,6 +1,9 @@
 function CreateProjectList(data, location) {
+    let host = `file:///C:/Users/William%20Hood/Documents/Code_Projects/Simple_Ticket_Tracker/Simple_Ticket_Tracker/src/front-end/HTML/ProjectPage.html`
     for(let d in data) {
-        let lineItem = `<p>${data[d].project_name}</p>`;
+        let url = new URL(host);
+        url.searchParams.set('id', data[d].project_id);
+        let lineItem = `<p><a href="${url.href}">${data[d].project_name}</a></p>`;
         $(location).append(lineItem);
     }
 }
