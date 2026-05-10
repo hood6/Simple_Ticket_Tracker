@@ -1,3 +1,4 @@
+//TODO - Should make this more reusable, maybe 'CreateElement' functions in /Utils
 function CreateProjectList(data, location) {
     let host = `file:///C:/Users/William%20Hood/Documents/Code_Projects/Simple_Ticket_Tracker/Simple_Ticket_Tracker/src/front-end/HTML/ProjectPage.html`
     for(let d in data) {
