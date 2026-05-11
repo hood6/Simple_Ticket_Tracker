@@ -1,6 +1,6 @@
 //TODO - Should make this more reusable, maybe 'CreateElement' functions in /Utils
 function CreateProjectList(data, location) {
-    let host = `file:///C:/Users/William%20Hood/Documents/Code_Projects/Simple_Ticket_Tracker/Simple_Ticket_Tracker/src/front-end/HTML/ProjectPage.html`
+    let host = LOCAL_PROJECT_PAGE_LOCATION
     for(let d in data) {
         let url = new URL(host);
         url.searchParams.set('id', data[d].project_id);
