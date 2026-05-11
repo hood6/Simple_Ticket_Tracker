@@ -1,0 +1,14 @@
+.board_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.col_wrapper {
+    width: 20%;
+}
+
+.col_wrapper h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
