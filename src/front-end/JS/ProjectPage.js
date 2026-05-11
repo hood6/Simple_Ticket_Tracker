@@ -1,14 +1,18 @@
-function CreateColumns(data, location) {
-    for(let d in data) {
-        //let col_html = '<div class="col_wrapper"';
-        let col_id = data[d].col_id;
-        let col_name = data[d].col_name;
-        let col_html =
-        `<div class="col_wrapper" id="col_${col_id}">
-            <h5>${col_name}</h5>
-        </div>`;
-        $(location).append(col_html);
-    }
+// function CreateColumns(data, location) {
+//     for(let d in data) {
+//         //let col_html = '<div class="col_wrapper"';
+//         let col_id = data[d].col_id;
+//         let col_name = data[d].col_name;
+//         let col_html =
+//         `<div class="col_wrapper" id="col_${col_id}">
+//             <h5>${col_name}</h5>
+//         </div>`;
+//         $(location).append(col_html);
+//     }
+// }
+
+function CreateTickets(data, location) {
+
 }
 
 $(document).ready(function() {
@@ -26,5 +30,5 @@ $(document).ready(function() {
         }
     }
 
-    CreateColumns(projectData, ".board_wrapper");
+    CreateElement(projectData, ".board_wrapper", "columns");
 });
