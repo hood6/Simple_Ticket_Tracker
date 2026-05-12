@@ -11,16 +11,17 @@
 //     }
 // }
 
-function CreateTickets(data, location) {
+// function CreateTickets(data, location) {
 
-}
+// }
 
 $(document).ready(function() {
     // Why am I using URL here?
+    // It may be a better idea to use window.location.pathname going forward.
     let url = new URL(window.location);
     let url_id = url.href.split('?')[1];
     let proj_id = url_id.split('=')[1];
-    console.log(proj_id);
+    //console.log(proj_id);
 
     // This will be replaced with ajax/back-end/sp
     let projectData = [];

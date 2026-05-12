@@ -28,7 +28,9 @@ function _CreateColumns(data, location) {
 }
 
 function _CreateTickets(data, location) {
-    
+    for(let d in data) {
+        //TODO - put logic in here
+    }
 }
 
 function _CreateProjectList(data, location) {
