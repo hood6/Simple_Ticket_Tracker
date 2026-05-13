@@ -1,10 +1,10 @@
 function CreateElement(data, location, type){
     switch(type) {
-        case "columns":
-            _CreateColumns(data, location);
+        case "column":
+            _CreateColumn(data, location);
             break;
-        case "tickets":
-            _CreateTickets(data, location);
+        case "ticket":
+            _CreateTicket(data, location);
             break;
         case "projects":
             _CreateProjectList(data, location);
@@ -15,22 +15,28 @@ function CreateElement(data, location, type){
     }
 }
 
-function _CreateColumns(data, location) {
-    for(let d in data) {
-        let col_id = data[d].col_id;
-        let col_name = data[d].col_name;
-        let col_html =
-        `<div class="col_wrapper" id="col_${col_id}">
+function _CreateColumn(data, location) {
+    let col_id = `col_${data.col_id}`;
+    let col_name = data.col_name;
+    let col_html =
+    `<div class="col_wrapper">
+        <div id="${col_id}">
             <h5>${col_name}</h5>
-        </div>`;
-        $(location).append(col_html);
-    }
+        </div>
+    </div>`;
+    $(location).append(col_html);
 }
 
-function _CreateTickets(data, location) {
-    for(let d in data) {
-        //TODO - put logic in here
-    }
+function _CreateTicket(data, location) {
+    let ticket_id = data.ticket_id;
+    let ticket_name = data.ticket_name;
+    let ticket_html = 
+    `<div class="ticket_wrapper">
+        <div id="${ticket_id}">
+            <h6>${ticket_name}</h6>
+        </div>
+    </div>`;
+    $(location).append(ticket_html);
 }
 
 function _CreateProjectList(data, location) {
