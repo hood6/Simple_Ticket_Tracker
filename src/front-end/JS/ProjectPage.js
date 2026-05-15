@@ -1,19 +1,3 @@
-// function CreateColumns(data, location) {
-//     for(let d in data) {
-//         //let col_html = '<div class="col_wrapper"';
-//         let col_id = data[d].col_id;
-//         let col_name = data[d].col_name;
-//         let col_html =
-//         `<div class="col_wrapper" id="col_${col_id}">
-//             <h5>${col_name}</h5>
-//         </div>`;
-//         $(location).append(col_html);
-//     }
-// }
-
-// function CreateTickets(data, location) {
-
-// }
 const _BOARD_LOCATION = '.board_wrapper';
 
 $(document).ready(function() {
@@ -34,4 +18,35 @@ $(document).ready(function() {
             }
         }
     }
+    // This works for dragging elements around, but not super well, and only for the first ticket.
+    let isDown = false;
+    $('.ticket_wrapper').on("click", function() {
+        let childID = $(this).children().attr("id");
+        console.log(`Ticket ${childID} was clicked.`);
+    });
+
+    // const draggableElements = $('.ticket_wrapper');
+    // for(let i = 0; i < draggableElements.length; i++) {
+    //     draggableElements[i].on("click", function() {
+    //         console.log(`Ticket ${i} was clicked.`);
+    //     });
+    // }
+
+    // for(let i = 0; i < dragElement.length; i++) {
+    //     dragElement[i].addEventListener('mousedown', function(){
+    //         isDown = true;
+    //     });
+    // }
+    // window.addEventListener('mouseup', function(){
+    //     isDown = false;
+    // });
+    // window.addEventListener('mousemove', function() {
+    //     for(let i = 0; i < dragElement.length; i++) {
+    //         if (isDown) {
+    //             dragElement[i].style.top = event.clientY + 'px';
+    //             dragElement[i].style.left = event.clientX + 'px';
+    //         }
+    //     }
+    // });
 });
+
