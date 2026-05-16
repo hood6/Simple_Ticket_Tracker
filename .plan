@@ -1,9 +1,12 @@
+# 5/16/2026
+
+
 # 5/15/2026
 IDEAS:
 - Refactor of ProjectPage.js data handling
 
 WORKING:
-- Draggable ticket elements
++ Draggable ticket elements
 - Tickets snap to grid
 
 SOON:

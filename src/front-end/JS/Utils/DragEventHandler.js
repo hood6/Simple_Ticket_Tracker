@@ -10,6 +10,10 @@ function dragEvent(e) {
             left: e.pageX - startX
         });
     });
+
+    $(document).on("mouseup", function() {
+        $(document).off("mousemove");
+    });
 }
 
 // function dragElement(ele) {

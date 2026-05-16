@@ -20,38 +20,5 @@ $(document).ready(function() {
     }
     
     $('.ticket_wrapper').on("mousedown", dragEvent);
-    $(document).on("mouseup", function() {
-        $(document).off("mousemove");
-    });
-
-    // $('.ticket_wrapper').on("click", function() {
-    //     let childID = $(this).children().attr("id");
-    //     console.log(`Ticket ${childID} was clicked.`);
-    // });
-
-    // const draggableElements = $('.ticket_wrapper');
-    // for(let i = 0; i < draggableElements.length; i++) {
-    //     draggableElements[i].on("click", function() {
-    //         console.log(`Ticket ${i} was clicked.`);
-    //     });
-    // }
-
-    // let isDown = false;
-    // for(let i = 0; i < dragElement.length; i++) {
-    //     dragElement[i].addEventListener('mousedown', function(){
-    //         isDown = true;
-    //     });
-    // }
-    // window.addEventListener('mouseup', function(){
-    //     isDown = false;
-    // });
-    // window.addEventListener('mousemove', function() {
-    //     for(let i = 0; i < dragElement.length; i++) {
-    //         if (isDown) {
-    //             dragElement[i].style.top = event.clientY + 'px';
-    //             dragElement[i].style.left = event.clientX + 'px';
-    //         }
-    //     }
-    // });
 });
 
