@@ -18,6 +18,9 @@ LATER:
 - Error log utility
 - Ticket window
 - Auditing changes in ticket state
+- Ordering tickets based on order in column
+- Place ticket in certain position in column
+- Adjust tickets in column after moving ticket
 
 PERSONAL NOTES:
 _____
