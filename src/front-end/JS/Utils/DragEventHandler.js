@@ -1,38 +1,39 @@
-let _mousedownOn = true;
-let _mousemoveOn = false;
-let _mouseupOn = false;
+let _eventObj = {
+    mousedownOn: true,
+    mousemoveOn: false,
+    mouseupOn: false,
+    element: null,
+    startX: -1,
+    startY: -1,
+}
 
-function dragEvent(e) {
-    _mouseupOn = true;
-    _mousemoveOn = true;
-    let element = $(this);
-    let startX = e.pageX - element.offset().left;
-    let startY = e.pageY - element.offset().top;
+function mousedownEvent(e) {
+    _eventObj.mouseupOn = true;
+    _eventObj.mousemoveOn = true;
+    _eventObj.element = $(this);
+    _eventObj.startX = e.pageX - _eventObj.element.offset().left;
+    _eventObj.startY = e.pageY - _eventObj.element.offset().top;
+}
 
-    $(document).on("mousemove", function(e){
-        if(!_mousemoveOn || !element || element === null) {
-            console.log("mousemove cannot fire");
-            return;
-        }
-        element.offset({
-            top: e.pageY - startY,
-            left: e.pageX - startX
-        });
+function mousemoveEvent(e) {
+    if(!_eventObj.mousemoveOn || !_eventObj.element || _eventObj.element === null) {
+        return;
+    }
+    _eventObj.element.offset({
+        top: e.pageY - _eventObj.startY,
+        left: e.pageX - _eventObj.startX
     });
+}
 
-    $(document).on("mouseup", function(e) {
-        // There's something about switching stuff on/off that is messing with the event firing.
-        // May need to switch events on/off during the course of the drag.
-        // DO NOT USE .off, CREATE A VARIABLE TO DETERMINE WHEN TO IGNORE EVENTS!
-        // https://stackoverflow.com/questions/18298083/turning-all-events-off-and-on-in-jquery
-        if(!_mouseupOn || !element || element === null) {
-            console.log("mouseup cannot fire");
-            return;
-        }
-        _mousemoveOn = false;
-        snapToNearestColumn(element);
-        element = null;
-    });
+function mouseupEvent(e) {
+    // DO NOT USE .off, CREATE A VARIABLE TO DETERMINE WHEN TO IGNORE EVENTS!
+    // https://stackoverflow.com/questions/18298083/turning-all-events-off-and-on-in-jquery
+    if(!_eventObj.mouseupOn || !_eventObj.element || _eventObj.element === null) {
+        return;
+    }
+    _eventObj.mousemoveOn = true;
+    snapToNearestColumn(_eventObj.element); // May need to change this to just _eventObj and handle the entire obj.
+    _eventObj.element = null; // Doubtful if this will remove the element.  Is this a shallow or deep copy?
 }
 
 // Why does this fire off n+1 times???

@@ -19,6 +19,8 @@ $(document).ready(function() {
         }
     }
     
-    $('.ticket_wrapper').on("mousedown", dragEvent);
+    $('.ticket_wrapper').on("mousedown", mousedownEvent);
+    $(document).on("mousemove", mousemoveEvent);
+    $(document).on("mouseup", mouseupEvent);
 });
 
