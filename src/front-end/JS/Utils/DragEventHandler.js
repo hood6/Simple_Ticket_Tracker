@@ -65,9 +65,8 @@ async function snapToNearestColumn(element) {
     });
     await moveElementToColumn(element, nearestColID)
     _mouseupOn = false;
-    // trying to reset the mousedown event
-    // sometimes multiple elements are appended, wth?
-    $('.ticket_wrapper').on("mousedown", dragEvent);
+    $('.ticket_wrapper').off("mousedown");
+    $('.ticket_wrapper').on("mousedown", mousedownEvent);
 }
 
 function moveElementToColumn(element, newColID) {

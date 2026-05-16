@@ -18,6 +18,15 @@ State variables worked well.  Another issue remains: sometimes element.remove() 
 Something is going on with the .each function in snapToNearest function, need to double check this.
 ---
 Issue may be with how the mousemove and mouseup events are set up.  They are within the dragEvent function which rebinds it over and over.  Need to refactor it so that it stops rebinding.
+---
+Fixed previous rebinding issue, however event listener is only bound twice.  Considering binding each time new ticket is created.  Two options:
+
+1) Unbind then rebind every listener on new ticket creation in snapToNearestColumn.
+2) Try binding mousedown specifically to the new ticket.
+
+May try 1 first, easier to implement and I don't have to worry about overlapping document listeners.  However, would I need to rebind the document wide ones?
+---
+Tried combination of 1 and 2, removing all mousedown event listeners from tickets then reinitializing them
 _____
 
 # 5/15/2026
@@ -26,7 +35,7 @@ IDEAS:
 
 WORKING:
 + Draggable ticket elements
-* Tickets snap to grid
++ Tickets snap to grid
 
 SOON:
 - Buttons for creating/saving/deleting tickets and columns
