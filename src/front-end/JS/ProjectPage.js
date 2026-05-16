@@ -18,12 +18,16 @@ $(document).ready(function() {
             }
         }
     }
-    // This works for dragging elements around, but not super well, and only for the first ticket.
-    let isDown = false;
-    $('.ticket_wrapper').on("click", function() {
-        let childID = $(this).children().attr("id");
-        console.log(`Ticket ${childID} was clicked.`);
+    
+    $('.ticket_wrapper').on("mousedown", dragEvent);
+    $(document).on("mouseup", function() {
+        $(document).off("mousemove");
     });
+
+    // $('.ticket_wrapper').on("click", function() {
+    //     let childID = $(this).children().attr("id");
+    //     console.log(`Ticket ${childID} was clicked.`);
+    // });
 
     // const draggableElements = $('.ticket_wrapper');
     // for(let i = 0; i < draggableElements.length; i++) {
@@ -32,6 +36,7 @@ $(document).ready(function() {
     //     });
     // }
 
+    // let isDown = false;
     // for(let i = 0; i < dragElement.length; i++) {
     //     dragElement[i].addEventListener('mousedown', function(){
     //         isDown = true;

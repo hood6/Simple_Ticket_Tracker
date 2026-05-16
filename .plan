@@ -20,5 +20,5 @@ PERSONAL NOTES:
 _____
 Working on custom element drag functionality without additional libraries (jQuery being the exception).  I would like to do this with minimal outside libraries or frameworks as a learning experience and to make me more versatile in any given environment.  Using this StackOverflow page as a guide: https://stackoverflow.com/questions/51409650/javascript-how-to-make-multiple-divs-draggable-and-movable-across-the-website
 ---
-
+Finally got element drag to work correctly, now need to clean up a little and introduce snapping to columns.  In the future, column snapping should change the data of the ticket, primarily the column it belongs to and the position within the column.
 _____
