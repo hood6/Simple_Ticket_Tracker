@@ -1,5 +1,13 @@
 # 5/16/2026
+PERSONAL NOTES:
+_____
+May need to rethink how to implement draggable tickets.  At the moment, it *can* drag and it *will* snap, but the way the DOM is set up will cause the next dragged ticket to fall below the next ticket, continuing until it is off the page.  Ideas for mitigating this issue:
 
+1) Through the DOM, remove ticket from one column, place it in the column it was dragged to, then refresh both columns.
+2) Reset all ticket offsets after drag event concludes.
+
+Leaning towards trying the first option.
+_____
 
 # 5/15/2026
 IDEAS:
