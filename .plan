@@ -26,7 +26,7 @@ Fixed previous rebinding issue, however event listener is only bound twice.  Con
 
 May try 1 first, easier to implement and I don't have to worry about overlapping document listeners.  However, would I need to rebind the document wide ones?
 ---
-Tried combination of 1 and 2, removing all mousedown event listeners from tickets then reinitializing them
+Tried combination of 1 and 2, removing all mousedown event listeners from tickets then reinitializing them.  Next steps are front-end documentation and MainPage back-end setup.
 _____
 
 # 5/15/2026
