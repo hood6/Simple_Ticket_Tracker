@@ -4,9 +4,20 @@ _____
 May need to rethink how to implement draggable tickets.  At the moment, it *can* drag and it *will* snap, but the way the DOM is set up will cause the next dragged ticket to fall below the next ticket, continuing until it is off the page.  Ideas for mitigating this issue:
 
 1) Through the DOM, remove ticket from one column, place it in the column it was dragged to, then refresh both columns.
-2) Reset all ticket offsets after drag event concludes.
+2) Reset all ticket offsets after drag event concludes.  This means sliding tickets up after a drag event if the top position is empty.
 
 Leaning towards trying the first option.
+---
+DOM manipulation worked much better, now I just have to figure out why one of the events is firing over and over again.
+---
+Need to *not* use .off as it completely removes the event listener.  Use a global variable to track an event's state, and return if event is set to not fire.
+Additional reading: https://stackoverflow.com/questions/18298083/turning-all-events-off-and-on-in-jquery
+---
+State variables worked well.  Another issue remains: sometimes element.remove() does not fire and breaks the board.  Need to ensure that element.remove() *always* fires.
+---
+Something is going on with the .each function in snapToNearest function, need to double check this.
+---
+Issue may be with how the mousemove and mouseup events are set up.  They are within the dragEvent function which rebinds it over and over.  Need to refactor it so that it stops rebinding.
 _____
 
 # 5/15/2026
@@ -15,7 +26,7 @@ IDEAS:
 
 WORKING:
 + Draggable ticket elements
-- Tickets snap to grid
+* Tickets snap to grid
 
 SOON:
 - Buttons for creating/saving/deleting tickets and columns

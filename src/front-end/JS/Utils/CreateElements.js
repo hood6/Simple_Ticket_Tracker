@@ -39,6 +39,7 @@ function _CreateTicket(data, location) {
     $(location).append(ticket_html);
 }
 
+// URL functionality here: https://dev.to/olaleyeblessing/create-dynamic-urls-with-url-constructor-in-javascript-2o9l
 function _CreateProjectList(data, location) {
     let host = LOCAL_PROJECT_PAGE_LOCATION
     for(let d in data) {
