@@ -1,3 +1,32 @@
+# 5/17/2026
+IDEAS:
+- Refactor of ProjectPage.js data handling
+
+WORKING:
+~ Documentation of front-end
+- Start Node.js back-end (endpoints for the main page)
+
+SOON:
+- Buttons for creating/saving/deleting tickets and columns
+- SQL server
+- Ticket window/modal
+
+LATER:
+- Error log utility
+- Auditing changes in ticket state
+- Ordering tickets based on order in column
+- Place ticket in certain position in column
+- Adjust tickets in column after moving ticket
+
+COMPLETED:
++ Draggable ticket elements
++ Tickets snap to grid
+
+PERSONAL NOTES:
+_____
+
+_____
+
 # 5/16/2026
 PERSONAL NOTES:
 _____
