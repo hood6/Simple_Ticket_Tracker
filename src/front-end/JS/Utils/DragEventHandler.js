@@ -1,5 +1,5 @@
+/**JS Object used to track the state of the mousedown, mousemove and mouseup event*/
 let _eventObj = {
-    mousedownOn: true,
     mousemoveOn: false,
     mouseupOn: false,
     element: null,
@@ -7,6 +7,13 @@ let _eventObj = {
     startY: -1,
 }
 
+/**
+ * mousedown event handler, starts the mouse event.
+ * When the left mouse button is depressed, mouseup and mousemove events are allowed to fire.
+ * The ticket element object to be moved is selected and the start position of the element is set.
+ * 
+ * @param {Object} e - mousedown event object
+ */
 function mousedownEvent(e) {
     _eventObj.mouseupOn = true;
     _eventObj.mousemoveOn = true;
@@ -15,6 +22,13 @@ function mousedownEvent(e) {
     _eventObj.startY = e.pageY - _eventObj.element.offset().top;
 }
 
+/**
+ * mousemove event handler.
+ * When the mouse is moved after mousedown event has been activated, the ticket element is moved with the mouse pointer.
+ * Will not activate if mousedown event has not been triggered.
+ * 
+ * @param {Object} e - mousemove event object
+ */
 function mousemoveEvent(e) {
     if(!_eventObj.mousemoveOn || !_eventObj.element || _eventObj.element === null) {
         return;
@@ -25,18 +39,32 @@ function mousemoveEvent(e) {
     });
 }
 
+/**
+ * mouseup event handler.
+ * When the left mouse button is released, element snaps to nearest column and disables mousemove event.
+ * In practice, a new element is created in the nearest column via snapToNearestColumn and the dragged element is deleted.
+ * Will not activate if mousedown event has not been triggered.
+ * 
+ * @param {Object} e - mouseup event object
+ */
 function mouseupEvent(e) {
-    // DO NOT USE .off, CREATE A VARIABLE TO DETERMINE WHEN TO IGNORE EVENTS!
-    // https://stackoverflow.com/questions/18298083/turning-all-events-off-and-on-in-jquery
+    // .plan 05/16/2026
     if(!_eventObj.mouseupOn || !_eventObj.element || _eventObj.element === null) {
         return;
     }
-    _eventObj.mousemoveOn = true;
-    snapToNearestColumn(_eventObj.element); // May need to change this to just _eventObj and handle the entire obj.
-    _eventObj.element = null; // Doubtful if this will remove the element.  Is this a shallow or deep copy?
+    _eventObj.mousemoveOn = false;
+    snapToNearestColumn(_eventObj.element);
+    _eventObj.element = null;
 }
 
-// Why does this fire off n+1 times???
+/**
+ * Checks for nearest column to the dragged element.
+ * Element and nearest column ID is passed along to moveElementToColumn to create new element in nearest column.
+ * Disables mouseup event and resets mousedown event on all tickets.
+ * In practice, the user will see the ticket snap to the nearest column.
+ * 
+ * @param {Object} element - jQuery object of the element being moved
+ */
 async function snapToNearestColumn(element) {
     /*
         Ticket position (offset) passed in
@@ -54,7 +82,7 @@ async function snapToNearestColumn(element) {
             - Both data obj and parent element
     */
     let nearestColLeft = -1, nearestColTop = -1, nearestColID = -1;
-    // TODO - Need to look into this, something is going on with the iteration causing some elements to get doubled over and over
+    // Finds nearest column to element
     $(".col_wrapper").each(function() {
         let colOffsetLeft = $(this).offset().left;
         let differenceLeft = Math.abs(element.offset().left - colOffsetLeft);
@@ -63,12 +91,20 @@ async function snapToNearestColumn(element) {
             nearestColID = $(this).children().attr("id");
         }
     });
-    await moveElementToColumn(element, nearestColID)
+    // Ensures element is handled appropriately before proceeding
+    await moveElementToColumn(element, nearestColID);
     _mouseupOn = false;
     $('.ticket_wrapper').off("mousedown");
     $('.ticket_wrapper').on("mousedown", mousedownEvent);
 }
 
+/**
+ * Appends element to the new column before disposing of the dragged element.
+ * 
+ * @param {Object} element - jQuery object of the element being moved
+ * @param {string} newColID - Column ID that the element will be appended to
+ * @returns - Promise to ensure element is properly handled before proceeding
+ */
 function moveElementToColumn(element, newColID) {
     return new Promise((resolve) => {
         let elementHTML = `<div class="ticket_wrapper">${element.html()}</div>`;
