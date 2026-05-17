@@ -1,3 +1,32 @@
+# 5/17/2026
+IDEAS:
+- Refactor of ProjectPage.js data handling
+
+WORKING:
++ Documentation of front-end
+- Start Node.js back-end (endpoints for the main page)
+
+SOON:
+- Buttons for creating/saving/deleting tickets and columns
+- SQL server
+- Ticket window/modal
+
+LATER:
+- Error log utility
+- Auditing changes in ticket state
+- Ordering tickets based on order in column
+- Place ticket in certain position in column
+- Adjust tickets in column after moving ticket
+
+COMPLETED:
++ Draggable ticket elements
++ Tickets snap to grid
+
+PERSONAL NOTES:
+_____
+Completed documentation and some clean-up of the front-end.  Moving on to the back-end...
+_____
+
 # 5/16/2026
 PERSONAL NOTES:
 _____
@@ -55,4 +84,6 @@ _____
 Working on custom element drag functionality without additional libraries (jQuery being the exception).  I would like to do this with minimal outside libraries or frameworks as a learning experience and to make me more versatile in any given environment.  Using this StackOverflow page as a guide: https://stackoverflow.com/questions/51409650/javascript-how-to-make-multiple-divs-draggable-and-movable-across-the-website
 ---
 Finally got element drag to work correctly, now need to clean up a little and introduce snapping to columns.  In the future, column snapping should change the data of the ticket, primarily the column it belongs to and the position within the column.
+---
+Placing a link here for URL functionality just in case: URL functionality here: https://dev.to/olaleyeblessing/create-dynamic-urls-with-url-constructor-in-javascript-2o9l
 _____

@@ -1,10 +1,11 @@
 const _BOARD_LOCATION = '.board_wrapper';
 
+/**
+ * Creates columns and tickets on document ready, as well as initializing the mouse event listeners.
+ */
 $(document).ready(function() {
-    // Why am I using URL here?
-    // It may be a better idea to use window.location.pathname going forward.
-    let url = new URL(window.location);
-    let url_id = url.href.split('?')[1];
+    let url = window.location.href;
+    let url_id = url.split('?')[1];
     let proj_id = url_id.split('=')[1];
 
     // This will be replaced with ajax/back-end/sp
