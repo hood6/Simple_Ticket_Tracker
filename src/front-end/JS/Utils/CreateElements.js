@@ -1,3 +1,11 @@
+/**
+ * Entry point for creating an element in the DOM.
+ * Uses the type parameter to determine which private function to pass the data and location along to.
+ * 
+ * @param {Object} data - JS object with relevant data for the element
+ * @param {string} location - Attribute under which the element will be placed
+ * @param {string} type - Type of element to be created
+ */
 function CreateElement(data, location, type){
     switch(type) {
         case "column":
@@ -15,6 +23,12 @@ function CreateElement(data, location, type){
     }
 }
 
+/**
+ * Builds and appends a column div to the given location.
+ * 
+ * @param {Object} data - JS object with relevant data for the element
+ * @param {string} location - Attribute under which the element will be placed
+ */
 function _CreateColumn(data, location) {
     let col_id = `col_${data.col_id}`;
     let col_name = data.col_name;
@@ -27,6 +41,12 @@ function _CreateColumn(data, location) {
     $(location).append(col_html);
 }
 
+/**
+ * Builds and appends a ticket div to the given location.
+ * 
+ * @param {Object} data - JS object with relevant data for the element
+ * @param {string} location - Attribute under which the element will be placed
+ */
 function _CreateTicket(data, location) {
     let ticket_id = data.ticket_id;
     let ticket_name = data.ticket_name;
@@ -39,10 +59,16 @@ function _CreateTicket(data, location) {
     $(location).append(ticket_html);
 }
 
-// URL functionality here: https://dev.to/olaleyeblessing/create-dynamic-urls-with-url-constructor-in-javascript-2o9l
+/**
+ * Builds and appends a list of projects to the given location.
+ * 
+ * @param {Object} data - JS object with relevant data for the element
+ * @param {string} location - Attribute under which the element will be placed
+ */
 function _CreateProjectList(data, location) {
     let host = LOCAL_PROJECT_PAGE_LOCATION
     for(let d in data) {
+        // .plan 05/15/2026
         let url = new URL(host);
         url.searchParams.set('id', data[d].project_id);
         let lineItem = `<p><a href="${url.href}">${data[d].project_name}</a></p>`;
