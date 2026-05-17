@@ -25,6 +25,11 @@ COMPLETED:
 PERSONAL NOTES:
 _____
 Completed documentation and some clean-up of the front-end.  Moving on to the back-end...
+---
+Notes for setting up Node.js back-end:
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Node_server_without_framework
+
+Planning to do this without a framework, however if needed I can fall back on Express.
 _____
 
 # 5/16/2026
