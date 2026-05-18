@@ -1,0 +1,12 @@
+{
+  "name": "simple_ticket_tracker_back-end",
+  "version": "0.1.0",
+  "description": "Node.js back-end for the ticket tracker.",
+  "license": "ISC",
+  "author": "Will",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
