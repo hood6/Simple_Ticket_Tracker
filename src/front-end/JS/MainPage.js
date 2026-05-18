@@ -1,10 +1,6 @@
-function CreateProjectList(data, location) {
-    for(let d in data) {
-        let lineItem = `<p>${data[d].project_name}</p>`;
-        $(location).append(lineItem);
-    }
-}
-
+/**
+ * Creates project list on document ready.
+ */
 $(document).ready(function() {
-    CreateProjectList(Projects, ".projects_list_wrapper");
+    CreateElement(Projects, ".projects_list_wrapper", "projects");
 });
