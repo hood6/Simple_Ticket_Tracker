@@ -31,7 +31,15 @@ https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server
 
 Planning to do this without a framework, however if needed I can fall back on Express.
 ---
-Using this page as a loose guide to get the back-end started: https://medium.com/@ibrahimhz/creating-your-first-backend-with-node-js-step-by-step-guide-892769af4cb0
+Using these pages as a loose guide to get the back-end started:
+https://medium.com/@ibrahimhz/creating-your-first-backend-with-node-js-step-by-step-guide-892769af4cb0
+https://www.geeksforgeeks.org/node-js/routing-in-node-js/
+https://www.w3schools.com/nodejs/obj_http_server.asp
+https://www.w3schools.com/jquery/ajax_ajax.asp
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Node_server_without_framework
+
+This one in particular seems very helpful:
+https://medium.com/@muhebollah.diu/creating-a-crud-api-with-plain-vanilla-node-js-no-frameworks-needed-52e2dab7ac67
 
 I've never created a back-end from complete scratch, and the idea of it feels a little daunting.  I have always worked within an already established back-end or service layer.
 _____
