@@ -1,14 +1,23 @@
+# 5/24/2026
+_____
+Returning to the project after spending some time focusing on prepping for a set of job interviews (and I am doubtful that I will get it).  Current focus will be setting up the Node.js layer.
+---
+Spent some time experimenting with serving HTML pages using Node.js.  For static pages, it seems that the consensus is to use "fs", but this will not meet my needs.  I need to find a way to properly deploy these pages before testing locally.  It seems like I may need to install http-server to the front-end.  For now, I need to actually learn to move data around.
+---
+Trying to learn this from scratch is becoming dejecting.  I used to work within Node.js and .NET services, but putting them together from scratch using plain Node.js is a whole different ballgame.
+_____
+
 # 5/17/2026
 IDEAS:
 - Refactor of ProjectPage.js data handling
 
 WORKING:
 + Documentation of front-end
-- Start Node.js back-end (endpoints for the main page)
+~ Start Node.js back-end (endpoints for the main page)
+- SQL server and docker container setup
 
 SOON:
 - Buttons for creating/saving/deleting tickets and columns
-- SQL server
 - Ticket window/modal
 
 LATER:

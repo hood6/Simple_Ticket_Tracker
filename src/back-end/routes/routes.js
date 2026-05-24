@@ -1,3 +1,5 @@
-const routes = {
+//import 
+
+export const routes = {
     
 }

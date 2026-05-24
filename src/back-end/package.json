@@ -4,9 +4,13 @@
   "description": "Node.js back-end for the ticket tracker.",
   "license": "ISC",
   "author": "Will",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": "./server.js",
+    "./routes/routes.js": "./routes/routes.js"
   }
 }
