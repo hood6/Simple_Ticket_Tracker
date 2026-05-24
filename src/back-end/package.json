@@ -11,6 +11,7 @@
   },
   "exports": {
     ".": "./server.js",
-    "./routes/routes.js": "./routes/routes.js"
+    "./routes/routes.js": "./routes/routes.js",
+    "./contollers/dataController.js": "./controllers/dataController.js"
   }
 }

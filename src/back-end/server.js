@@ -6,7 +6,16 @@ const server = http.createServer((req, res) => {
     // res.writeHead(200, {"content-type": "text/html"});
     // res.write("<h2>Hello World</h2>");
     // res.end();
+    let ret = JSON.stringify(routes);
     const url = req.url;
+    for(let [key, val] of Object.entries(routes)) {
+        if(key === `.${url}`) {
+            ret = JSON.stringify(val.GET());
+        }
+    }
+    res.writeHead(200, {"content-type": "text/plain"});
+    res.write(ret);
+    res.end();
     /* This code works, however they are not static pages and require additional logic from js files. */
     // const _dir = "../front-end/HTML/"
     // let fileName = "";
