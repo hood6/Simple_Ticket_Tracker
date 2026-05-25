@@ -6,6 +6,7 @@ const server = http.createServer((req, res) => {
     try {
         let ret = JSON.stringify(routes);
         const url = req.url;
+        // This should probably be a regex or a switch.
         for(let [key, val] of Object.entries(routes)) {
             if(key === `.${url}`) {
                 ret = JSON.stringify(val.GET());

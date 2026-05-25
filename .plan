@@ -1,3 +1,7 @@
+# 5/25/2026
+_____
+I think the endpoint can be considered "done".  It's not perfect, but it works the way I want it to.  I will make a few annotations in the code to return to.  Moving on to SQL and docker setup.  Once that is done, I will need to revisit the endpoint and have it actually pull data from the db.
+
 # 5/24/2026
 _____
 Returning to the project after spending some time focusing on prepping for a set of job interviews (and I am doubtful that I will get it).  Current focus will be setting up the Node.js layer.
@@ -19,8 +23,9 @@ IDEAS:
 
 WORKING:
 + Documentation of front-end
-~ Start Node.js back-end (endpoints for the main page)
-- SQL server and docker container setup
++ Start Node.js back-end (endpoints for the main page)
+~ SQL server and docker container setup
+- Have main page endpoint get data from db.
 
 SOON:
 - Buttons for creating/saving/deleting tickets and columns
