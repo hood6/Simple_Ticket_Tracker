@@ -1,6 +1,6 @@
 export const dataController = {
     getProjectList: function() {
-        return localProjectList;
+        return JSON.stringify(localProjectList);
     }
 }
 

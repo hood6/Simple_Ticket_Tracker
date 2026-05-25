@@ -5,6 +5,10 @@ Returning to the project after spending some time focusing on prepping for a set
 Spent some time experimenting with serving HTML pages using Node.js.  For static pages, it seems that the consensus is to use "fs", but this will not meet my needs.  I need to find a way to properly deploy these pages before testing locally.  It seems like I may need to install http-server to the front-end.  For now, I need to actually learn to move data around.
 ---
 Trying to learn this from scratch is becoming dejecting.  I used to work within Node.js and .NET services, but putting them together from scratch using plain Node.js is a whole different ballgame.
+---
+Why am I trying to serve up the pages through the back-end?  Try just running the server and use ajax calls when opening the html file. 
+---
+It worked, will need to consider this going forward.  It's always the simplest answer...
 _____
 
 # 5/17/2026

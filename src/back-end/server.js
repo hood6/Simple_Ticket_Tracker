@@ -13,7 +13,9 @@ const server = http.createServer((req, res) => {
             ret = JSON.stringify(val.GET());
         }
     }
-    res.writeHead(200, {"content-type": "text/plain"});
+    // THIS ABSOLUTELY NEEDS TO BE CHANGED ONCE THIS GOES LIVE, DO NOT LEAVE THIS IN.
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, {"content-type": "application/json"});
     res.write(ret);
     res.end();
     /* This code works, however they are not static pages and require additional logic from js files. */
