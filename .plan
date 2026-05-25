@@ -9,6 +9,8 @@ Trying to learn this from scratch is becoming dejecting.  I used to work within 
 Why am I trying to serve up the pages through the back-end?  Try just running the server and use ajax calls when opening the html file. 
 ---
 It worked, will need to consider this going forward.  It's always the simplest answer...
+---
+The MVC model seems rather clunky for what I'm trying to accomplish.
 _____
 
 # 5/17/2026

@@ -1,16 +1,7 @@
+import { dataModels } from "../models/models.js";
+
 export const dataController = {
     getProjectList: function() {
-        return JSON.stringify(localProjectList);
+        return dataModels.getProjectList();
     }
 }
-
-const localProjectList = [
-                {
-                    project_id: 1,
-                    project_name: "Test Project 1"
-                },
-                {
-                    project_id: 2,
-                    project_name: "Test Project 2"
-                }
-            ]
