@@ -1,14 +1,34 @@
+# 5/25/2026
+_____
+I think the endpoint can be considered "done".  It's not perfect, but it works the way I want it to.  I will make a few annotations in the code to return to.  Moving on to SQL and docker setup.  Once that is done, I will need to revisit the endpoint and have it actually pull data from the db.
+
+# 5/24/2026
+_____
+Returning to the project after spending some time focusing on prepping for a set of job interviews (and I am doubtful that I will get it).  Current focus will be setting up the Node.js layer.
+---
+Spent some time experimenting with serving HTML pages using Node.js.  For static pages, it seems that the consensus is to use "fs", but this will not meet my needs.  I need to find a way to properly deploy these pages before testing locally.  It seems like I may need to install http-server to the front-end.  For now, I need to actually learn to move data around.
+---
+Trying to learn this from scratch is becoming dejecting.  I used to work within Node.js and .NET services, but putting them together from scratch using plain Node.js is a whole different ballgame.
+---
+Why am I trying to serve up the pages through the back-end?  Try just running the server and use ajax calls when opening the html file. 
+---
+It worked, will need to consider this going forward.  It's always the simplest answer...
+---
+The MVC model seems rather clunky for what I'm trying to accomplish.  I think the value of it may be revealed once I start hooking up the db, but for now it feels weird to just call the very simple model using the controller.
+_____
+
 # 5/17/2026
 IDEAS:
 - Refactor of ProjectPage.js data handling
 
 WORKING:
 + Documentation of front-end
-- Start Node.js back-end (endpoints for the main page)
++ Start Node.js back-end (endpoints for the main page)
+~ SQL server and docker container setup
+- Have main page endpoint get data from db.
 
 SOON:
 - Buttons for creating/saving/deleting tickets and columns
-- SQL server
 - Ticket window/modal
 
 LATER:
@@ -25,6 +45,23 @@ COMPLETED:
 PERSONAL NOTES:
 _____
 Completed documentation and some clean-up of the front-end.  Moving on to the back-end...
+---
+Notes for setting up Node.js back-end:
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Node_server_without_framework
+
+Planning to do this without a framework, however if needed I can fall back on Express.
+---
+Using these pages as a loose guide to get the back-end started:
+https://medium.com/@ibrahimhz/creating-your-first-backend-with-node-js-step-by-step-guide-892769af4cb0
+https://www.geeksforgeeks.org/node-js/routing-in-node-js/
+https://www.w3schools.com/nodejs/obj_http_server.asp
+https://www.w3schools.com/jquery/ajax_ajax.asp
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Node_server_without_framework
+
+This one in particular seems very helpful:
+https://medium.com/@muhebollah.diu/creating-a-crud-api-with-plain-vanilla-node-js-no-frameworks-needed-52e2dab7ac67
+
+I've never created a back-end from complete scratch, and the idea of it feels a little daunting.  I have always worked within an already established back-end or service layer.
 _____
 
 # 5/16/2026
