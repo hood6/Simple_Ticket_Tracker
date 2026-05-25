@@ -13,4 +13,4 @@ const localProjectList = [
                     project_id: 2,
                     project_name: "Test Project 2"
                 }
-            ]
+            ];

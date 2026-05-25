@@ -10,7 +10,7 @@ Why am I trying to serve up the pages through the back-end?  Try just running th
 ---
 It worked, will need to consider this going forward.  It's always the simplest answer...
 ---
-The MVC model seems rather clunky for what I'm trying to accomplish.
+The MVC model seems rather clunky for what I'm trying to accomplish.  I think the value of it may be revealed once I start hooking up the db, but for now it feels weird to just call the very simple model using the controller.
 _____
 
 # 5/17/2026
