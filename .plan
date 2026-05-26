@@ -1,8 +1,52 @@
+# 5/26/2026
+IDEAS:
+- Refactor of ProjectPage.js data handling
+- Parser for .plan
+
+WORKING:
++ Documentation of front-end
++ Start Node.js back-end (endpoints for the main page)
+~ Docker container setup (Postgres and Node.js back-end)
+- Have main page endpoint get data from db.
+
+SOON:
+- Buttons for creating/saving/deleting tickets and columns
+- Ticket window/modal
+
+LATER:
+- Error log utility
+- Pipeline in Github
+- Auditing changes in ticket state
+- Ordering tickets based on order in column
+- Place ticket in certain position in column
+- Adjust tickets in column after moving ticket
+
+COMPLETED:
++ Draggable ticket elements
++ Tickets snap to grid
+
+PERSONAL NOTES
+_____
+Plan for the containers:
+I will have two separate containers, one for Postgres and one for the Node.js back-end.  The front-end will be deployed by itself, communicate with the back-end container, which will pull data from the Postgres container.  Most resources suggest using docker compose and have a docker-compose.yml for orchestrating communication between the two.  I will be making this bridge from scratch.
+---
+Some reference material:
+https://github.com/docker/getting-started-todo-app/blob/main/Dockerfile
+https://stackoverflow.com/questions/77602587/whats-the-simplest-way-to-connect-two-containers-without-docker-compose
+https://docs.docker.com/guides/nodejs/containerize/
+https://stackoverflow.com/questions/32997269/copying-a-file-in-a-dockerfile-no-such-file-or-directory
+
+docker build -f Dockerfile -t ticket_tracker_back:1.0 .
+_____
+
 # 5/25/2026
 _____
 I think the endpoint can be considered "done".  It's not perfect, but it works the way I want it to.  I will make a few annotations in the code to return to.  Moving on to SQL and docker setup.  Once that is done, I will need to revisit the endpoint and have it actually pull data from the db.
+---
+I forgot to do documentation before merging, need to go back and do that.
 
 # 5/24/2026
+PERSONAL NOTES:
 _____
 Returning to the project after spending some time focusing on prepping for a set of job interviews (and I am doubtful that I will get it).  Current focus will be setting up the Node.js layer.
 ---
