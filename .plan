@@ -72,6 +72,8 @@ https://stackoverflow.com/questions/66760944/run-a-command-line-when-starting-a-
 
 docker build -f Dockerfile -t ticket_tracker_back:1.0 ../../../src
 docker run --name ticket_tracker_back_container -p 3000:3000  ticket_tracker_back:1.0
+docker build -f Dockerfile -t ticket_tracker_db:1.0 .
+docker run --name ticket_tracker_db_container -p 3001:3001 ticket_tracker_db:1.0
 ---
 Inage works, but getting permission error when trying to run the server on the container.
 Warnings for JSON args for ENTRYPOINT and CMD.

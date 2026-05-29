@@ -3,3 +3,5 @@ FROM postgres:${POSTGRES_VERSION} AS base
 
 WORKDIR /usr/local/app
 EXPOSE 3001
+
+ENTRYPOINT echo "Postgres DB ready."
