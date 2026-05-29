@@ -41,6 +41,8 @@ WORKING:
 SOON:
 - Buttons for creating/saving/deleting tickets and columns
 - Ticket window/modal
+- Environment variables setup
+- Container users setup
 
 LATER:
 - Error log utility

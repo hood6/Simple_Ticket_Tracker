@@ -1,0 +1,9 @@
+# Release
+Release=1.0.0
+Build=10000
+# Container Versions
+Back-End-Ver=1.0.0
+Server-Ver=1.0.0
+# Node.js and Postgres Versions
+Nodejs=24.14.1
+Postgres=18.3
