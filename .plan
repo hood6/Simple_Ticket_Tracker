@@ -36,9 +36,10 @@ WORKING:
 + Documentation of front-end
 + Start Node.js back-end (endpoints for the main page)
 ~ Docker container setup (Postgres and Node.js back-end)
-- Have main page endpoint get data from db.
+- Have main page endpoint get data from db
 
 SOON:
+- Get ticket information from db
 - Buttons for creating/saving/deleting tickets and columns
 - Ticket window/modal
 - Environment variables setup
