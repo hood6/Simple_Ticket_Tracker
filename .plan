@@ -1,3 +1,19 @@
+# 5/28/2026
+PERSONAL NOTES:
+_____
+Did not work on it much today, still getting permission issues when booting up the container.
+It seems that this issue can be caused by a number of things.
+chmod +x seems to be the fix, turning a file into an executable?
+---
+The issue is being caused by ENTRYPOINT.  For some reason, my current setup is giving a Permission Denied error.  However, just running a sleep command is fine, and the files that are copied are inside of the container.  I think this will be the way forward after making sure I'm in the correct directory:
+
+ENTRYPOINT node server.js
+
+Will try tomorrow.
+
+Also I need these ads to shut the hell up about Codex or *any* AI agent, stop trying to pitch me this garbage.  Tired of hearing about how a manager gets to "contribute to the codebase".
+_____
+
 # 5/26/2026
 IDEAS:
 - Refactor of ProjectPage.js data handling
@@ -35,8 +51,14 @@ https://github.com/docker/getting-started-todo-app/blob/main/Dockerfile
 https://stackoverflow.com/questions/77602587/whats-the-simplest-way-to-connect-two-containers-without-docker-compose
 https://docs.docker.com/guides/nodejs/containerize/
 https://stackoverflow.com/questions/32997269/copying-a-file-in-a-dockerfile-no-such-file-or-directory
+https://www.linkedin.com/learning/docker-essential-training/building-your-first-image?autoSkip=true&resume=false
+https://stackoverflow.com/questions/66760944/run-a-command-line-when-starting-a-docker-container
 
-docker build -f Dockerfile -t ticket_tracker_back:1.0 .
+docker build -f Dockerfile -t ticket_tracker_back:1.0 ../../../src
+docker run -p 3000:3000  ticket_tracker_back:1.0
+---
+Inage works, but getting permission error when trying to run the server on the container.
+Warnings for JSON args for ENTRYPOINT and CMD.
 _____
 
 # 5/25/2026
