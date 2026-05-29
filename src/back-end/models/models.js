@@ -14,5 +14,9 @@ const localProjectList = [
                 {
                     project_id: 2,
                     project_name: "Test Project 2"
+                },
+                {
+                    project_id: 3,
+                    project_name: "Test Project 3"
                 }
             ];

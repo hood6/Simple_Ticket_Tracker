@@ -1,3 +1,15 @@
+# 5/29/2026
+PERSONAL NOTES:
+_____
+Previous note was correct, switched workdir to back-end folder and ran "node server.js".  Container runs correctly now.
+I may switch to using a shell script for better outputs for debugging, but for now it works!
+Furthermore, after rebuilding, running and testing the front end, it properly displays the data.  Of interesting note, it did require a rebuild of the image after modifying the back-end files.  I assumed that the copy would occur during container build, but that was incorrect, it occurs on image build.  I shold have assumed that since the only thing that runs on container build is the entrypoint atm.
+Time to attempt the Postgres server next.
+---
+Some resources for stopping a container with no error:
+https://stackoverflow.com/questions/34228864/stop-and-delete-docker-container-if-its-running
+_____
+
 # 5/28/2026
 PERSONAL NOTES:
 _____
@@ -18,6 +30,7 @@ _____
 IDEAS:
 - Refactor of ProjectPage.js data handling
 - Parser for .plan
+- Switch docker entrypoints to shell scripts
 
 WORKING:
 + Documentation of front-end
@@ -55,7 +68,7 @@ https://www.linkedin.com/learning/docker-essential-training/building-your-first-
 https://stackoverflow.com/questions/66760944/run-a-command-line-when-starting-a-docker-container
 
 docker build -f Dockerfile -t ticket_tracker_back:1.0 ../../../src
-docker run -p 3000:3000  ticket_tracker_back:1.0
+docker run --name ticket_tracker_back_container -p 3000:3000  ticket_tracker_back:1.0
 ---
 Inage works, but getting permission error when trying to run the server on the container.
 Warnings for JSON args for ENTRYPOINT and CMD.

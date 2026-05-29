@@ -13,8 +13,11 @@ EXPOSE 3000
 
 # This should work on container run.
 # Warning about using JSON args for these two lines.
+# Should change this to a shell script for better output.
+WORKDIR /usr/local/app/back-end
+ENTRYPOINT node server.js
 # ENTRYPOINT /usr/local/app/back-end
-ENTRYPOINT sleep 10m
+# ENTRYPOINT sleep 10m
 # CMD node server.js
 
 # Come back and tack proper notes on this.
