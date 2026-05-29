@@ -8,6 +8,18 @@ Time to attempt the Postgres server next.
 ---
 Some resources for stopping a container with no error:
 https://stackoverflow.com/questions/34228864/stop-and-delete-docker-container-if-its-running
+---
+Working on Postgres Dockerfile, having an issue with the container stopping.  Obviously it runs the entrypoint and then stops as it is supposed to, but I need to make sure it continues to run.  Currently considering using the detached (-d) and pseudo-tty (-t) tags to keep it running in the background.
+Updated docker cmds:
+
+docker build -f Dockerfile -t ticket_tracker_back:1.0 ../../../src
+docker run --name ticket_tracker_back_container -p 3000:3000  ticket_tracker_back:1.0
+docker build -f Dockerfile -t ticket_tracker_db:1.0 ../../../src
+docker run --name ticket_tracker_db_container -p 3001:3001 ticket_tracker_db:1.0
+
+Next consideration is networking the two containers, setting up the Postgres db, changing the back-end model for project data, and finally testing via the front-end.
+---
+Struggling to get a shell script to run on entrypoint.  Tried chmod on copy.
 _____
 
 # 5/28/2026
@@ -39,8 +51,9 @@ WORKING:
 - Have main page endpoint get data from db
 
 SOON:
+- Back-end unit testing
 - Get ticket information from db
-- Buttons for creating/saving/deleting tickets and columns
+- Buttons for creating/saving/deleting tickets and columns (revisit, should update on action, not necessarily by button push)
 - Ticket window/modal
 - Environment variables setup
 - Container users setup
@@ -69,11 +82,12 @@ https://docs.docker.com/guides/nodejs/containerize/
 https://stackoverflow.com/questions/32997269/copying-a-file-in-a-dockerfile-no-such-file-or-directory
 https://www.linkedin.com/learning/docker-essential-training/building-your-first-image?autoSkip=true&resume=false
 https://stackoverflow.com/questions/66760944/run-a-command-line-when-starting-a-docker-container
+https://docs.docker.com/reference/dockerfile/#entrypoint
 
 docker build -f Dockerfile -t ticket_tracker_back:1.0 ../../../src
 docker run --name ticket_tracker_back_container -p 3000:3000  ticket_tracker_back:1.0
 docker build -f Dockerfile -t ticket_tracker_db:1.0 .
-docker run --name ticket_tracker_db_container -p 3001:3001 ticket_tracker_db:1.0
+docker run --name ticket_tracker_db_container -d -t -p 3001:3001 ticket_tracker_db:1.0
 ---
 Inage works, but getting permission error when trying to run the server on the container.
 Warnings for JSON args for ENTRYPOINT and CMD.
